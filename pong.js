@@ -65,7 +65,7 @@ function reiniciar() {
     pincel.fillText(mnsg, x, y)
   }
 
-  function limpaTela() {
+  function desenhaTela() {
     pincel.clearRect(10, 10, 580, 340)
     pincel.fillStyle = 'black'
     pincel.fillRect(10, 10, 580, 340)
@@ -90,7 +90,7 @@ function reiniciar() {
   }
 
   function atualizaTela() {
-    limpaTela()
+    desenhaTela()
     desenhaPaleta(jogador.x, jogador.y)
     desenhaPaleta(maquina.x, maquina.y)
     desenhaCirculo(bolinha.x, bolinha.y)
@@ -187,7 +187,6 @@ function reiniciar() {
     movimentaBolinha()
     atualizaTela()
   }
-
   //Fundo verde
   pincel.fillStyle = 'green'
   pincel.fillRect(0, 0, 600, 360)

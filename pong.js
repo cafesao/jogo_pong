@@ -7,6 +7,8 @@ const pontos = {
 }
 
 function reiniciar() {
+  //collideRectCircle(jogador.x,jogador.y,60,10,bolinha.x,bolinha.y,20)
+
   const jogador = {
     valociadeJogador: 10,
     x: 36,
@@ -118,25 +120,28 @@ function reiniciar() {
   }
 
   function verificarMaquina() {
-    if (maquina.y - 20 <= 0 || maquina.y > canvas.height - 80) {
-      maquina.velocidadeMaquina *= -1
+    //if (maquina.y < 20 || maquina.y + 60 > canvas.height - 20) {
+    if (bolinha.y < 50 || bolinha.y > canvas.height - 50) {
+      return false
     }
+    return true
   }
 
   function movimentaMaquina() {
-    maquina.y += maquina.velocidadeMaquina
-    verificarMaquina()
+    if (verificarMaquina()) {
+      maquina.y = bolinha.y - 60 / 2
+    }
   }
 
   function verificarBolinhaBorda() {
-    if (bolinha.x + 24 >= canvas.width) {
+    if (bolinha.x > 554) {
       pontos.maquina += 1
       clearInterval(intervalo)
       document.onkeydown = null
       document.onkeyup = null
       reiniciar()
     }
-    if (bolinha.x < 30) {
+    if (bolinha.x < 36) {
       pontos.jogador += 1
       clearInterval(intervalo)
       document.onkeydown = null
@@ -157,8 +162,9 @@ function reiniciar() {
   function verificaBolinhaJogador() {
     if (
       bolinha.x - 10 < jogador.x + 10 &&
+      bolinha.x + 20 > jogador.x &&
       bolinha.y < jogador.y + 60 &&
-      bolinha.y > jogador.y
+      bolinha.y + 20 > jogador.y
     ) {
       return true
     }

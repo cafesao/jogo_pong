@@ -7,6 +7,26 @@ const pontos = {
 }
 
 function reiniciar() {
+  const canvasEsquerda = {
+    x: 4,
+    y: 0,
+  }
+
+  const canvasDireita = {
+    x: 586,
+    y: 0,
+  }
+
+  const canvasCima = {
+    x: 0,
+    y: 5,
+  }
+
+  const canvasBaixo = {
+    x: 0,
+    y: 346,
+  }
+
   const jogador = {
     valociadeJogador: 10,
     x: 36,
@@ -22,7 +42,7 @@ function reiniciar() {
   const bolinha = {
     velocidadeX: 6,
     velocidadeY: 6,
-    x: 90,
+    x: 300,
     y: 180,
   }
 
@@ -158,37 +178,36 @@ function reiniciar() {
   }
 
   function verificarBolinhaBorda() {
-    if (bolinha.x > 554) {
+    if (
+      verificaColisao(canvasCima, 600, 10) ||
+      verificaColisao(canvasBaixo, 600, 10)
+    ) {
+      bolinha.velocidadeY *= -1
+    }
+    if (
+      verificaColisao(canvasEsquerda, 10, 360) ||
+      verificaColisao(canvasDireita, 10, 360)
+    ) {
       pontos.maquina += 1
       clearInterval(intervalo)
       document.onkeydown = null
       document.onkeyup = null
       reiniciar()
     }
-    if (bolinha.x < 36) {
-      pontos.jogador += 1
-      clearInterval(intervalo)
-      document.onkeydown = null
-      document.onkeyup = null
-      reiniciar()
-    }
-    if (bolinha.y + 24 >= canvas.height || bolinha.y < 30) {
-      bolinha.velocidadeY *= -1
-    }
   }
 
   function verificarBolinhaPaletas() {
-    if (verificaColisao(jogador) || verificaColisao(maquina)) {
+    if (verificaColisao(jogador, 10, 60) || verificaColisao(maquina, 10, 60)) {
       bolinha.velocidadeX *= -1
     }
   }
 
-  function verificaColisao(paleta) {
+  function verificaColisao(colidir, largura, altura) {
     return collideRectCircle(
-      paleta.x,
-      paleta.y,
-      10,
-      60,
+      colidir.x,
+      colidir.y,
+      largura,
+      altura,
       bolinha.x,
       bolinha.y,
       20,
@@ -220,4 +239,4 @@ function reiniciar() {
   document.onkeyup = teclaSolta
   let intervalo = setInterval(jogo, 16.66)
 }
-reiniciar()
+//reiniciar()

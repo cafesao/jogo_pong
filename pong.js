@@ -7,8 +7,6 @@ const pontos = {
 }
 
 function reiniciar() {
-  //collideRectCircle(jogador.x,jogador.y,60,10,bolinha.x,bolinha.y,20)
-
   const jogador = {
     valociadeJogador: 10,
     x: 36,
@@ -17,14 +15,14 @@ function reiniciar() {
 
   const maquina = {
     velocidadeMaquina: 5,
-    x: 554,
+    x: 552,
     y: 150,
   }
 
   const bolinha = {
     velocidadeX: 6,
     velocidadeY: 6,
-    x: 300,
+    x: 90,
     y: 180,
   }
 
@@ -61,6 +59,33 @@ function reiniciar() {
       }
     },
   }
+
+  function collideRectCircle(rx, ry, rw, rh, cx, cy, diametro) {
+    function dist(...args) {
+      return Math.hypot(args[2] - args[0], args[3] - args[1])
+    }
+
+    let testX = cx
+    let testY = cy
+
+    if (cx < rx) {
+      testX = rx
+    } else if (cx > rx + rw) {
+      testX = rx + rw
+    }
+
+    if (cy < ry) {
+      testY = ry
+    } else if (cy > ry + rh) {
+      testY = ry + rh
+    }
+
+    if (dist(cx, cy, testX, testY) <= diametro / 2) {
+      return true
+    }
+    return false
+  }
+
   function escreveTela(x, y, mnsg) {
     pincel.font = '25pt Arial'
     pincel.fillStyle = 'rgba(255,255,255,0.40)'
@@ -120,7 +145,6 @@ function reiniciar() {
   }
 
   function verificarMaquina() {
-    //if (maquina.y < 20 || maquina.y + 60 > canvas.height - 20) {
     if (bolinha.y < 50 || bolinha.y > canvas.height - 50) {
       return false
     }
@@ -154,30 +178,21 @@ function reiniciar() {
   }
 
   function verificarBolinhaPaletas() {
-    if (verificaBolinhaJogador() || verificarBolinhaMaquina()) {
+    if (verificaColisao(jogador) || verificaColisao(maquina)) {
       bolinha.velocidadeX *= -1
     }
   }
 
-  function verificaBolinhaJogador() {
-    if (
-      bolinha.x - 10 < jogador.x + 10 &&
-      bolinha.x + 20 > jogador.x &&
-      bolinha.y < jogador.y + 60 &&
-      bolinha.y + 20 > jogador.y
-    ) {
-      return true
-    }
-  }
-
-  function verificarBolinhaMaquina() {
-    if (
-      bolinha.x > maquina.x - 10 &&
-      bolinha.y < maquina.y + 60 &&
-      bolinha.y > maquina.y
-    ) {
-      return true
-    }
+  function verificaColisao(paleta) {
+    return collideRectCircle(
+      paleta.x,
+      paleta.y,
+      10,
+      60,
+      bolinha.x,
+      bolinha.y,
+      20,
+    )
   }
 
   function movimentaBolinha() {
@@ -193,6 +208,7 @@ function reiniciar() {
     movimentaBolinha()
     atualizaTela()
   }
+
   //Fundo verde
   pincel.fillStyle = 'green'
   pincel.fillRect(0, 0, 600, 360)
@@ -204,4 +220,4 @@ function reiniciar() {
   document.onkeyup = teclaSolta
   let intervalo = setInterval(jogo, 16.66)
 }
-//reiniciar()
+reiniciar()

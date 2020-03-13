@@ -12,7 +12,7 @@ Sou apenas um cara que **ama programar** e gosta de desafios, e desta vez o desa
 ### Primeiro de tudo...o que é Pong? :question:
 
 Pong foi o primeiro jogo lucrativo da história, ele deu origem a indústria de jogos que a gente conhece, os criadores do Pong foram nada menos que [Nolan Bushnell](https://twitter.com/nolanbushnell) e Ted Dabney.
-Esses dois criaram uma empresa so um pouco conhecida, **ATARI**.
+Esses dois criaram uma empresa so um pouco conhecida, [**ATARI**](https://pt.wikipedia.org/wiki/Atari).
 
 > Infelizmente Ted morreu em 2018 por causa de um câncer, R.I.P Ted :disappointed:
 
@@ -21,7 +21,7 @@ Esses dois criaram uma empresa so um pouco conhecida, **ATARI**.
 ![image](https://i.imgur.com/Y0dlWLQ.jpg)
 
 Bem simples, existe uma bolinha, que "quica" nas bordas e nas paletas (jogadores), e o objetivo e simplesmente fazer com que a bolinha passe da paleta do oponente, assim ganhando 1 ponto.
-Pode parecer simples e bobo, mas para os anos 70 isso era algo muito legal e divertido.
+Pode parecer simples e bobo, mas para os **anos 70** isso era algo muito legal e divertido.
 
 > Simples + Divertido = Money :moneybag:
 
@@ -35,7 +35,7 @@ Bastante, aprendi como usar o elemento canvas do HTML, como "ler" as teclas do t
 
 ### Você gostou de fazer esse jogo? :question:
 
-Sim, e muito bonito ver algo seu dando certo e quebrando na sua frente por que você digitou algo errado ou não importou uma função ksksks, e uma sensação única você ficar horas tentando entender o que esta acontecendo, vários `console.log` para todos os lados, para perceber que o erro era algo bobo, você ri, pra não chorar ksksks.
+Sim, e muito bonito ver algo seu dando certo e **quebrando** na sua frente por que você digitou algo errado ou não importou uma função ksksks, e uma sensação única você ficar **horas** tentando entender o que esta acontecendo, vários `console.log` para todos os lados, para perceber que o erro era algo bobo, você ri, **pra não chorar** ksksks.
 
 Mas serio, foi muito legal quebrar a cabeça para desenvolver este jogo e sinto que em breve eu possa recriar outro jogo usando o canvas.
 

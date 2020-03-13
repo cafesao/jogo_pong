@@ -2,7 +2,7 @@
 
 ## O primeiro jogo lucrativo da história!
 
-![](https://media.giphy.com/media/VIQMefBOK2b6SL3ucw/giphy.gif)
+![Alt Text](https://media.giphy.com/media/VIQMefBOK2b6SL3ucw/giphy.gif)
 
 ### Quem é esse tal de Cafesão? :question:
 

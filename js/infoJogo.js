@@ -25,12 +25,12 @@ export const movimentosAceitos = {
   },
   LogArrowUp() {
     if (jogador.y - 20 !== 0) {
-      jogador.y -= jogador.valociadeJogador
+      jogador.y -= jogador.velocidade
     }
   },
   LogArrowDown() {
     if (jogador.y + 80 !== canvas.height) {
-      jogador.y += jogador.valociadeJogador
+      jogador.y += jogador.velocidade
     }
   },
 }
@@ -55,13 +55,12 @@ export const tamanhoCanvas = {
 }
 
 export const jogador = {
-  valociadeJogador: 10,
+  velocidade: 10,
   x: 36,
   y: 150,
 }
 
 export const maquina = {
-  velocidadeMaquina: 5,
   x: 552,
   y: 150,
 }

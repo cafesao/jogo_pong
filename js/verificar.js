@@ -8,6 +8,7 @@ import {
   canvas,
 } from './infoJogo.js'
 import { intervalo, iniciarJogo } from './pong.js'
+import { somPonto, somRaquete } from './som.js'
 
 export function verificarMaquina() {
   if (bolinha.y < 50 || bolinha.y > canvas.height - 50) {
@@ -22,6 +23,7 @@ export function verificarBolinhaBorda() {
   }
 
   function reiniciar() {
+    somPonto.play()
     clearInterval(intervalo)
     document.onkeydown = null
     document.onkeyup = null
@@ -46,6 +48,7 @@ export function verificarBolinhaBorda() {
 
 export function verificarBolinhaPaletas() {
   if (verificaColisao(jogador, 10, 60) || verificaColisao(maquina, 10, 60)) {
+    somRaquete.play()
     bolinha.velocidadeX *= -1
   }
 }

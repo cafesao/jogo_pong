@@ -3,7 +3,7 @@ import {
   verificarBolinhaPaletas,
   verificarMaquina,
 } from './verificar.js'
-import { movimentosAceitos, maquina, bolinha } from './infoJogo.js'
+import { movimentosAceitos, maquina, bolinha, canvas } from './infoJogo.js'
 
 export function teclaPressionada(evento) {
   if (movimentosAceitos[evento.key]) {
@@ -27,6 +27,7 @@ export function movimentaTudo() {
     }
   }
 
+  //Adversario nunca perde :/
   function movimentaMaquina() {
     if (verificarMaquina()) {
       maquina.y = bolinha.y - 60 / 2

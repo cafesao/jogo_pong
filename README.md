@@ -37,7 +37,7 @@ Bastante, aprendi como usar o elemento canvas do HTML, como "ler" as teclas do t
 
 Sim, e muito bonito ver algo seu dando certo e **quebrando** na sua frente por que você digitou algo errado ou não importou uma função ksksks, e uma sensação única você ficar **horas** tentando entender o que esta acontecendo, vários `console.log` para todos os lados, para perceber que o erro era algo bobo, você ri, **pra não chorar** ksksks.
 
-Mas serio, foi muito legal quebrar a cabeça para desenvolver este jogo e sinto que em breve eu possa recriar outro jogo usando o canvas.
+Mas serio, foi muito legal quebrar a cabeça para desenvolver este jogo e ja estou desenvolvendo outro jogo clássico, chamado [Freeway](https://github.com/cafesao/jogo_freeway).
 
 ### Tem algum plano para o futuro deste jogo? :question:
 

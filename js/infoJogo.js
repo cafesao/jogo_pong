@@ -61,6 +61,7 @@ export const jogador = {
 }
 
 export const maquina = {
+  velocidade: 0,
   x: 552,
   y: 150,
 }

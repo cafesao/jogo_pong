@@ -13,11 +13,11 @@ export function iniciarJogo() {
 
   //Bolinha começa para algum lado, do jogador ou da maquina.
   if (Math.floor(Math.random() * 2)) {
-    bolinha.velocidadeX = -6
-    bolinha.velocidadeY = -6
-  } else {
     bolinha.velocidadeX = 6
     bolinha.velocidadeY = 6
+  } else {
+    bolinha.velocidadeX = -6
+    bolinha.velocidadeY = -6
   }
 
   bolinha.x = 300
